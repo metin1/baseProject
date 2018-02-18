@@ -1,0 +1,45 @@
+@import '../../../styles/app';
+
+.root {
+  font-size: $font-size-small - 1;
+  z-index: 1;
+  padding-bottom: 50px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 7px $content-padding-horizontal;
+}
+
+.spacer {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 790px;
+  margin: 0 auto;
+
+  li > a {
+    &:hover {
+      background-color: $body-bg !important;
+      text-decoration: underline !important;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    position: static;
+
+    .list {
+      width: 100%;
+    }
+  }
+}

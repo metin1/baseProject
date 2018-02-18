@@ -1,0 +1,138 @@
+@import '../../../styles/app';
+
+.root {
+  border-bottom: 1px solid $primary-gray;
+  background-color: $primary-white;
+}
+
+.brand {
+  width: 230px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  img {
+    height: 50px;
+  }
+}
+
+.categories {
+  width: 490px;
+
+  & > li {
+    & > a {
+      display: flex;
+
+      & > i {
+        font-size: 30px;
+
+        &::before {
+          -webkit-font-smoothing: subpixel-antialiased;
+          -moz-osx-font-smoothing: inherit;
+        }
+      }
+
+      & > span {
+        align-self: center;
+        display: none;
+        padding-left: 5px;
+      }
+    }
+
+    &.active {
+      &:hover > a,
+      & > a:focus,
+      & > a {
+        background-color: $brand-success;
+        color: $primary-white;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        & > span {
+          display: initial;
+        }
+      }
+    }
+  }
+}
+
+.searchAndProfile {
+  margin-right: 15px;
+
+  .headerDropdown {
+    display: inline-flex;
+    margin: 0;
+    width: 225px;
+    height: 59px;
+
+    & > a {
+      position: relative;
+      width: 100%;
+      background-color: $body-bg;
+
+      &:hover {
+        background-color: $brand-success!important;
+      }
+
+      & > span {
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+
+        & > .onlinePoint {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 10px;
+          right: 40px;
+          border-radius: 50%;
+          background-color: $brand-danger;
+        }
+
+        & > i {
+          font-size: 30px;
+
+          &::before {
+            -webkit-font-smoothing: subpixel-antialiased;
+            -moz-osx-font-smoothing: inherit;
+          }
+        }
+
+        & > img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        & > span {
+          width: calc(100% - 35px);
+          text-align: center;
+          line-height: 31px;
+        }
+      }
+    }
+
+    &.open {
+      & > a {
+        width: 100%;
+        background-color: $brand-success !important;
+        color: $primary-white !important;
+      }
+
+      & > ul {
+        border-color: $primary-white;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .activeMenuItem {
+    & > a:hover {
+      color: black !important;
+    }
+  }
+}
+
+.nav > li > a {
+  padding: 13px 3px !important;
+}
