@@ -1,0 +1,75 @@
+@import '../../styles/app';
+
+footer {
+  font-family: $font-family-roboto;
+
+  .container {
+    background-color: #121013;
+    color: white;
+
+    .top {
+      width: 1000px;
+      margin: 0 auto;
+      height: 200px;
+      padding-top: 50px;
+      display: flex;
+
+      .where {
+        font-size: 26px;
+        font-weight: 400;
+      }
+
+      .right {
+        margin-left: 50px;
+
+        .hours {
+          font-size: 26px;
+          font-weight: 400;
+        }
+
+        .time {
+          display: flex;
+          margin-top: 17px;
+
+          .week {
+            margin-right: 65px;
+          }
+        }
+      }
+
+      .bigWords {
+        font-size: 28px;
+
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 40;
+      }
+    }
+  }
+  .containerBottom {
+    background-color: #1c1a1d;
+    color: white;
+
+    .bottom {
+      width: 1000px;
+      margin: 0 auto;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        a {
+          margin: 0 10px;
+
+          &:hover {
+            color: #337ab7;
+          }
+        }
+      }
+    }
+  }
+}
+

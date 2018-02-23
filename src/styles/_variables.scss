@@ -2,9 +2,12 @@
  * Typography
  * ======================================================================== */
 $font-size-base: 16px;
-$font-family-base: 'Open Sans', sans-serif 400;
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-dancing: 'Dancing Script', cursive;
+$font-family-roboto:'Roboto', sans-serif;
 
-$text-color: #555;
+
+$text-color: #22313f;
 $link-color: #337ab7;
 
 $brand-primary: #3754a5 !default;
@@ -54,7 +57,7 @@ $max-content-width: 1000px;
 
 $grid-float-breakpoint: 0;
 
-$body-bg: #e8e8e8;
+$body-bg: white;
 
 /*
  * Media queries breakpoints
@@ -102,7 +105,7 @@ $input-height-small: 30px;
  * ======================================================================== */
 $primary-white: white;
 $primary-black: #3d3d46;
-$primary-gray: #959595;
+$primary-gray: #22313F;
 $light-gray: #dedede;
 $grey: #f4f4f4;
 $green: green;

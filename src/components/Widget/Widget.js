@@ -19,6 +19,7 @@ class Widget extends React.Component {
   };
 
   render() {
+    document.body.style.backgroundColor = "#e8e8e8";
     return (
       <section className={[s.widget, this.props.className].join(' ')}>
         {

@@ -4,7 +4,6 @@ import { Grid, Alert } from 'react-bootstrap';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Login.scss';
 import Widget from '../../../components/Widget';
-import Footer from '../../../components/_layout/Footer';
 import ErrorsList from '../../../components/ErrorsList';
 
 const Login = ({
@@ -87,7 +86,6 @@ const Login = ({
         </form>
       </Widget>
     </Grid>
-    <Footer className="text-center" />
   </div>
 );
 

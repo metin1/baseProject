@@ -1,14 +1,21 @@
 import classes from 'classnames';
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Loader.scss';
+import { withStyles } from 'material-ui/styles';
+import { CircularProgress } from 'material-ui/Progress';
+import PropTypes from 'prop-types';
 
-const Loader = ({className, sm, contrast}) => (
-  <div
-    className={classes(s.root, {
-      [s.contrast]: contrast,
-    }, className)}
-  />
+const styles = theme => ({
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
+});
+
+const Loader = (props) => (
+  <CircularProgress className={props.classes.progress} />
 );
 
-export default withStyles(s)(Loader);
+Loader.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Loader);
