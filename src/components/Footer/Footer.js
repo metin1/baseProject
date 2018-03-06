@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.scss';
-import {I18n} from 'react-redux-i18n';
 import moment from 'moment';
 
 class Footer extends Component {
@@ -34,7 +33,7 @@ class Footer extends Component {
           <div className={s.bottom}>
             <span>Copyright {moment().year()} © Acasa la mama with love by Leanca Valentin</span>
             <span>
-              <a>Permissions and Copyright </a> | <a href="https://www.facebook.com/leancav" target="_blank"> Contact developer</a>
+              <a>Permissions and Copyright </a> | <a target='_blank' rel='noopener noreferrer' href="https://www.facebook.com/leancav"> Contact developer</a>
             </span>
           </div>
         </div>

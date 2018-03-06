@@ -6,12 +6,16 @@ import Footer from  '../../components/Footer';
 import AboutImage from '../../image/about.png';
 import BanquetImage from '../../image/banquet.png';
 import Menu from '../../image/menu.png';
+import video from '../../image/video.mp4';
 
 const Home = () => (
     <div className={s.root}>
       <Header />
       <section>
-        <div className={s.initialImage} />
+        <video autoPlay muted loop id={s.myVideo}>
+          <source src={video} type="video/mp4" />
+            Your browser does not support HTML5 video.
+        </video>
       </section>
       <section className={s.secound}>
         <div className={s.about}>
@@ -38,6 +42,7 @@ const Home = () => (
           <div className={s.imageBanquet}>
           <img src={BanquetImage}
                alt="Banchete"
+               id={s.banchete}
           />
           </div>
         <div className={s.descriptionBanquet}>
@@ -46,7 +51,7 @@ const Home = () => (
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           </p>
-          <button>
+          <button id={s.rezerva}>
             Rezerva
           </button>
         </div>
@@ -128,7 +133,7 @@ const Home = () => (
             </div>
           </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
 );
 

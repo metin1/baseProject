@@ -5,10 +5,10 @@
     left: 0;
     top: 0;
     width: 100%;
-    color: #2C3E50;
-    background: #fff;
+    color: white;
     z-index: 99;
     line-height: 6rem;
+    transition: 0.3s;
 
     .container {
       display: flex;

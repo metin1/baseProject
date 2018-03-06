@@ -1,6 +1,7 @@
 @import '../../styles/app';
 
 .root {
+  /*
  .initialImage {
    width: 100%;
    height: 100%;
@@ -12,9 +13,16 @@
    background-repeat: no-repeat;
    background-size: cover;
    filter: brightness(85%);
-
  }
+ */
 
+  #myVideo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
   .secound {
     width: 1000px;
     margin: -30px auto 0;
@@ -46,11 +54,13 @@
         .imageAbout {
           width: 35%;
           height: 300px;
+          overflow: hidden;
 
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.5s;
           }
         }
       }
@@ -58,6 +68,7 @@
       .banquet {
         display: flex;
         background-color: $primary-white;
+        transition: 0.5s;
 
         .descriptionBanquet {
           width: 35%;
@@ -68,6 +79,7 @@
             color: $text-color;
             font-size: 15px;
             margin-bottom: 20px;
+            font-weight: 400;
           }
 
           button {
@@ -94,11 +106,13 @@
           width: 65%;
           height: 300px;
           object-fit: cover;
+          overflow: hidden;
 
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.5s;
           }
         }
       }
@@ -231,6 +245,13 @@
   }
 }
 
+.banquet:hover .imageBanquet img {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 
-
+.about:hover .imageAbout img {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 

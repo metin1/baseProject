@@ -17,6 +17,7 @@ import Bundle from '../core/Bundle';
 /* eslint-disable */
 import PageNotFound from 'bundle-loader?lazy!../pages/_errors/PageNotFound';
 import Home from 'bundle-loader?lazy!../pages/Home';
+import Events from 'bundle-loader?lazy!../pages/Events';
 /* eslint-enable */
 
 import AdministrationLayout from '../_administration/components/_layout/Layout';
@@ -24,6 +25,7 @@ import { AuthRoutes } from '../pages/_auth/Switch';
 
 const PageNotFoundBundle = Bundle.generateBundle(PageNotFound);
 const HomeBundle = Bundle.generateBundle(Home);
+const EventsBundle = Bundle.generateBundle(Events);
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -123,6 +125,7 @@ class App extends Component {
     return (
       <Switch>
         <Route path="/" exact component={HomeBundle} />
+        <Route path="/events" exact component={EventsBundle} />
         <PrivateRoute isAuthenticated={isAuthenticated} path="/administration" component={AdministrationLayout} />
         {AuthRoutes}
         <Route component={PageNotFoundBundle} />
