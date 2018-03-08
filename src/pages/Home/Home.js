@@ -8,7 +8,9 @@ import BanquetImage from '../../image/banquet.png';
 import Menu from '../../image/menu.png';
 import video from '../../image/video.mp4';
 
-const Home = () => (
+const Home = ({
+  redirect,
+}) => (
     <div className={s.root}>
       <Header />
       <section>
@@ -51,7 +53,7 @@ const Home = () => (
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           </p>
-          <button id={s.rezerva}>
+          <button id={s.rezerva} onClick={redirect}>
             Rezerva
           </button>
         </div>
@@ -137,4 +139,4 @@ const Home = () => (
     </div>
 );
 
-export default withStyles(s)(Home);
+export default  withStyles(s)(Home);

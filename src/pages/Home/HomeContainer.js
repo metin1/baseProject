@@ -1,12 +1,19 @@
 import React, {Component}  from "react";
 import Home from './Home';
+import {withRouter} from "react-router";
 
 class HomeContainner extends Component {
   render() {
+    const {
+      history,
+    } = this.props;
+
     return(
-        <Home />
+        <Home
+          redirect={() => history.push('/contacts')}
+        />
        )
   }
 }
 
-export default HomeContainner;
+export default withRouter(HomeContainner);

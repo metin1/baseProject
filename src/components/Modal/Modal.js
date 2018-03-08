@@ -1,36 +1,86 @@
-import React, {Component}  from "react";
+import {Component}  from "react";
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
 const modalRoot = document.getElementById('modal-root');
 
 class Modal extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    show: PropTypes.bool,
+    omitOverflow: PropTypes.bool,
+    beforeRender: PropTypes.func,
+    beforeClose: PropTypes.func,
+  };
+
+  static defaultProps = {
+    show: true,
+    omitOverflow: false,
+    beforeClose: resolve => {resolve();},
+  };
+
   constructor(props) {
     super(props);
     this.el = document.createElement('div');
   }
 
+  componentWillMount() {
+    const {
+      omitOverflow,
+      beforeRender,
+    } = this.props;
+
+    if ( ! omitOverflow) {
+      this.setBodyOverflowY();
+    }
+
+    if (beforeRender instanceof Function) {
+      beforeRender();
+    }
+  }
+
   componentDidMount() {
-    // The portal element is inserted in the DOM tree after
-    // the Modal's children are mounted, meaning that children
-    // will be mounted on a detached DOM node. If a child
-    // component requires to be attached to the DOM tree
-    // immediately when mounted, for example to measure a
-    // DOM node, or uses 'autoFocus' in a descendant, add
-    // state to Modal and only render the children when Modal
-    // is inserted in the DOM tree.
     modalRoot.appendChild(this.el);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {
+      show,
+      omitOverflow,
+    } = this.props;
+
+    if ( ! omitOverflow && ! show === nextProps.show) {
+      this.setBodyOverflowY(nextProps);
+    }
   }
 
   componentWillUnmount() {
     modalRoot.removeChild(this.el);
+
+    const { omitOverflow } = this.props;
+
+    if ( ! omitOverflow) {
+      document.body.style.overflowY = '';
+    }
+  }
+
+  setBodyOverflowY(props) {
+    const { show } = props || this.props;
+
+    document.body.style.overflowY = show ? 'hidden' : '';
   }
 
   render() {
-    return (
-      ReactDOM.createPortal(
-      this.props.children,
-      this.el,
-    )
-  );
+    const {
+      children,
+    } = this.props;
+
+      return (
+        ReactDOM.createPortal(
+        children,
+        this.el,
+      )
+    );
   }
 }
 

@@ -17,15 +17,6 @@ const Events = ({
           <span>Evenimente</span>
         </div>
       </div>
-    {
-      modal &&(
-        <Modal>
-          <div className={s.modal}>
-            <button onClick={openModal}>Hide modal</button>
-          </div>
-        </Modal>
-      )
-    }
     <section className={s.events}>
       {
         (data &&(
@@ -35,21 +26,29 @@ const Events = ({
               <Fragment key={data.id}>
                 <div className={s.event}>
                   <div className={s.images} onClick={openModal}>
-                    <img src={data.img} alt={data.title}/>
+                    <img src={data.img} alt={data.title} />
                   </div>
                   <span className={s.name}> {data.title} </span> <br />
                   <span className={s.date}> {data.time} </span>
                 </div>
               </Fragment>
+              )
             )
-          )
-      }
+          }
       </Fragment>
         )) || (
           'La moment nu sunt evenimente'
         )
       }
-
+      {
+        modal &&(
+          <Modal>
+            <div className={s.modal}>
+              <button onClick={openModal}>Hide modal</button>
+            </div>
+          </Modal>
+        )
+      }
     </section>
     <Footer />
   </Fragment>

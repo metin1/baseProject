@@ -10,6 +10,7 @@ $font-family-roboto:'Roboto', sans-serif;
 $text-color: #22313f;
 $link-color: #337ab7;
 
+$gold: #c29b73 !default;
 $brand-primary: #3754a5 !default;
 $brand-success: #94ba52 !default;
 $brand-info: #5d80f9 !default;
@@ -69,7 +70,7 @@ $screen-md-min: 992px;  /* Medium screen / desktop */
 $screen-lg-min: 1200px; /* Large screen / wide desktop */
 
 /*
- * components
+ * Popup
  * ======================================================================== */
 $content-padding-horizontal: 30px;
 $content-padding-vertical: 40px;
