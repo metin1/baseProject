@@ -24,13 +24,13 @@ const Events = ({
           {
             data.map(data => (
               <Fragment key={data.id}>
-                <div className={s.event}>
+                <article className={s.event}>
                   <div className={s.images} onClick={openModal}>
                     <img src={data.img} alt={data.title} />
                   </div>
                   <span className={s.name}> {data.title} </span> <br />
                   <span className={s.date}> {data.time} </span>
-                </div>
+                </article>
               </Fragment>
               )
             )

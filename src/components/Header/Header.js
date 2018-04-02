@@ -14,28 +14,32 @@ class Header extends Component {
     this.onScroll = this.onScroll.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('scroll', this.onScroll)
   }
 
-  onScroll () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
+  }
 
-    if(250 <= scrollTop) {
-      this.setState({
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        color: '#22313f',
-        shadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
-      });
-    }
+  onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if(250 >= scrollTop) {
-      this.setState({
-        backgroundColor: '',
-        shadow: '',
-        color: 'white',
-      });
-    }
+      if(250 <= scrollTop) {
+        this.setState({
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          color: '#22313f',
+          shadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+        });
+      }
+
+      if(250 >= scrollTop) {
+        this.setState({
+          backgroundColor: '',
+          shadow: '',
+          color: 'white',
+        });
+      }
   }
 
   render() {

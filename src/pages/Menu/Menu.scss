@@ -90,6 +90,10 @@
           font-weight: 400;
         }
 
+        & > h3 {
+          margin: 0;
+        }
+
         & > span {
           color: #FABE58;
           font-size: 18px;
@@ -119,10 +123,12 @@
         justify-content: space-between;
 
         & > span {
-          margin-top: 28px;
+          margin-top: 23px;
           color: #FABE58;
+          font-size: 21px;
         }
       }
     }
   }
 }
+

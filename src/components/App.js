@@ -19,6 +19,7 @@ import PageNotFound from 'bundle-loader?lazy!../pages/_errors/PageNotFound';
 import Home from 'bundle-loader?lazy!../pages/Home';
 import Events from 'bundle-loader?lazy!../pages/Events';
 import Menu from 'bundle-loader?lazy!../pages/Menu';
+import Contacts from 'bundle-loader?lazy!../pages/Contacts';
 /* eslint-enable */
 
 import AdministrationLayout from '../_administration/components/_layout/Layout';
@@ -28,6 +29,7 @@ const PageNotFoundBundle = Bundle.generateBundle(PageNotFound);
 const HomeBundle = Bundle.generateBundle(Home);
 const EventsBundle = Bundle.generateBundle(Events);
 const MenuBundle = Bundle.generateBundle(Menu);
+const ContactsBundle = Bundle.generateBundle(Contacts);
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -129,6 +131,7 @@ class App extends Component {
         <Route path="/" exact component={HomeBundle} />
         <Route path="/events" exact component={EventsBundle} />
         <Route path="/menu" exact component={MenuBundle} />
+        <Route path="/contacts" exact component={ContactsBundle} />
         <PrivateRoute isAuthenticated={isAuthenticated} path="/administration" component={AdministrationLayout} />
         {AuthRoutes}
         <Route component={PageNotFoundBundle} />

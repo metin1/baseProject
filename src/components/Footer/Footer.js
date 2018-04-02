@@ -11,6 +11,7 @@ class Footer extends Component {
           <div className={s.top}>
             <div>
               <span className={s.where}>Unde ne aflam</span>
+              <i className="material-icons">place</i>
               <h3>Strada Petru Rareș 59, Chișinău</h3>
             </div>
 
